@@ -5,3 +5,12 @@ function showUser(surname, name) {
 }
 
 showUser.apply(age, ['Святой', 'Источник']);
+
+let btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+    let show = () => {
+        console.log(this);
+    };
+    show();
+});
