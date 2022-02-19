@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // При клике на кнопки меню убираем контент который показывается
     // по умолчанию и выводим тот, по которому кликнули
 
-    info.addEventListener('click', function(event) {
+    info.addEventListener('click', function (event) {
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')) {
             for (let i = 0; i < tab.length; i++) {
@@ -46,15 +46,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
     function getTimeRemaining(endTime) {
         let t = Date.parse(endTime) - Date.parse(new Date()),
-            seconds = Math.floor((t/1000) % 60),
-            minutes = Math.floor((t/1000/60) % 60),
-            hours = Math.floor((t/(1000*60*60)));
+            seconds = Math.floor((t / 1000) % 60),
+            minutes = Math.floor((t / 1000 / 60) % 60),
+            hours = Math.floor((t / (1000 * 60 * 60)));
 
         return {
-            'total' : t,
-            'hours' : hours,
-            'minutes' : minutes,
-            'seconds' : seconds,
+            'total': t,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds,
         };
     }
 
@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 seconds.textContent = '0' + t.seconds : seconds.textContent = t.seconds;
 
 
-            if (t.total <= 0 ) {
+            if (t.total <= 0) {
                 clearInterval(timeInterval);
                 hours.textContent = '00';
                 minutes.textContent = '00';
@@ -117,8 +117,7 @@ window.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = '';
     });
 
-    class Options
-    {
+    class Options {
 
         constructor(height, width, bg, fontSize, textAlign) {
             this.height = height;
@@ -135,6 +134,7 @@ window.addEventListener('DOMContentLoaded', function () {
             elem.style.cssText = params;
         }
     }
+
     let optionOne = new Options(300, 500, "blue", 11, "right");
     optionOne.createDiv();
 
